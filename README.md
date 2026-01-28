@@ -1,10 +1,11 @@
-<p align="centre" style="background-colour: #CCCCCC;">
+
+<p align="center" style="background-colour: #CCCCCC;">
   <a href="https://www.reactvision.xyz/">
     <img src="https://avatars.githubusercontent.com/u/74572641?s=200&v=4" alt="ReactVision logo" width="120px" height="120px">
   </a>
 </p>
 
-<p align="centre">
+<p align="center">
   <a href="https://www.npmjs.com/package/@reactvision/react-viro">
     <img src="https://img.shields.io/npm/v/@reactvision/react-viro" alt="npm version">
   </a>
@@ -16,7 +17,7 @@
   </a>
 </p>
 
-# ViroReact (ReactVision)
+<h1 align="center">ViroReact (ReactVision)</h1>
 
 ViroReact is a library for building Augmented Reality (AR) and Virtual Reality (VR) experiences using React Native. Viro runs your code natively across mobile VR (including Google Daydream, Samsung Gear VR, and Google Cardboard on iOS and Android) and AR platforms (iOS ARKit and Android ARCore).
 
