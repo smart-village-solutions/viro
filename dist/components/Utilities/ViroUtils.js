@@ -14,6 +14,7 @@ exports.polarToCartesian = polarToCartesian;
 exports.polarToCartesianActual = polarToCartesianActual;
 exports.latLngToMercator = latLngToMercator;
 exports.gpsToArWorld = gpsToArWorld;
+exports.requestRequiredPermissions = requestRequiredPermissions;
 exports.isARSupportedOnDevice = isARSupportedOnDevice;
 /**
  * Convert the given polar coords of the form [r, theta, phi] to cartesian
@@ -112,6 +113,18 @@ function gpsToArWorld(devicePose, anchorLat, anchorLng, anchorAlt) {
         deltaAlt, // arY (altitude difference)
         -distance * Math.cos(relBearing), // arZ
     ];
+}
+/**
+ * Check and request the permissions required for Viro AR to function (camera access).
+ * Resolves with `{ granted: true }` if camera permission is granted, `{ granted: false }` if denied.
+ */
+function requestRequiredPermissions() {
+    if (react_native_1.Platform.OS === "ios") {
+        return react_native_1.NativeModules.VRTARUtils.requestRequiredPermissions();
+    }
+    else {
+        return react_native_1.NativeModules.VRTARSceneNavigatorModule.requestRequiredPermissions();
+    }
 }
 function isARSupportedOnDevice() {
     return new Promise((resolve, reject) => {

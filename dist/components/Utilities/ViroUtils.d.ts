@@ -49,6 +49,17 @@ export declare function latLngToMercator(lat: number, lng: number): [number, num
  * @returns [arX, arY, arZ] position in metres relative to the device
  */
 export declare function gpsToArWorld(devicePose: ViroGeospatialPose, anchorLat: number, anchorLng: number, anchorAlt: number): [number, number, number];
+export interface ViroPermissionsResult {
+    camera: boolean;
+    microphone: boolean;
+    storage: boolean;
+    location: boolean;
+}
+/**
+ * Check and request the permissions required for Viro AR to function (camera access).
+ * Resolves with `{ granted: true }` if camera permission is granted, `{ granted: false }` if denied.
+ */
+export declare function requestRequiredPermissions(): Promise<ViroPermissionsResult>;
 export interface ViroiOSArSupportResponse {
     isARSupported: boolean;
 }
